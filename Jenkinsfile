@@ -51,16 +51,16 @@ pipeline {
                 }
             }
        }
-        // stage('deploy') {
-        //     steps {
-        //         script{
-        //             def params = [
-        //                 string(name: 'appVersion', value: "${appVersion}")
-        //             ]
-        //             build job: 'frontend-deploy' , parameeters: params , wait: false
-        //         }
-        //     }
-        // }  
+        stage('deploy') {
+            steps {
+                script{
+                    def params = [
+                        string(name: 'appVersion', value: "${appVersion}")
+                    ]
+                    build job: 'frontend-deploy' , parameeters: params , wait: false
+                }
+            }
+        }  
    }  
     post { 
         always { 

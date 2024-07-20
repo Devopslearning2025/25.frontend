@@ -13,7 +13,7 @@ pipeline {
         nexusUrl = 'nexus.devopslearning2025.online:8081'
     }
     stages {
-        stage("read the version") {
+        stage('read the version') {
             steps {
                 script {
                     def packageJson = readJSON file: 'package.json'
